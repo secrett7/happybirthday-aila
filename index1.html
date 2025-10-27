@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Aila 💖</title>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap');
+
+  body {
+    background-color: #ffe6f2;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: #ff4d88;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  h1 {
+    margin-top: 40px;
+    font-size: 2em;
+    animation: float 2s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+  }
+
+  .slideshow-container {
+    width: 300px;
+    height: 350px;
+    margin: 40px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #ffd6e7;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .slideshow-container img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    border-radius: 20px;
+  }
+
+  .slideshow-container img.active {
+    opacity: 1;
+  }
+
+  /* --- Tambahan: Video Kecil --- */
+  .video-container {
+    margin: 20px auto;
+    width: 300px;
+    height: 170px;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #ffd6e7;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+  }
+
+  .video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  button {
+    background-color: #ff4d88;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background-color: #ff80aa;
+  }
+
+  footer {
+    margin-top: 30px;
+    font-size: 0.9em;
+  }
+
+  .heart {
+    display: inline-block;
+    animation: beat 1s infinite;
+  }
+
+  @keyframes beat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+  }
+
+  /* --- Pop-up Love Letter --- */
+  .popup-bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 182, 193, 0.6);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+
+  .popup-content {
+    background-color: #fff0f5;
+    border-radius: 20px;
+    padding: 25px;
+    width: 80%;
+    max-width: 400px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+    animation: fadeIn 0.5s ease forwards;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.1em;
+    position: relative;
+  }
+
+  .popup-content h2 {
+    text-align: center;
+    color: #ff4d88;
+    margin-bottom: 10px;
+  }
+
+  .popup-content button {
+    background-color: #ff4d88;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 8px 15px;
+    font-size: 0.9em;
+    cursor: pointer;
+    display: block;
+    margin: 15px auto 0;
+  }
+
+  .popup-content button:hover {
+    background-color: #ff80aa;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* --- Floating Hearts --- */
+  .floating-heart {
+    position: fixed;
+    bottom: -10px;
+    color: #ff80aa;
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
+    opacity: 0.8;
+  }
+
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(-110vh) scale(1.5);
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+  <h1>🎂 Happy Birthday Aila sayanggg 💕</h1>
+
+  <div class="slideshow-container">
+    <img src="gambar 1.jpg" class="active">
+    <img src="gambar 2.jpg">
+    <img src="gambar 3.jpg">
+    <img src="gambar 4.jpg">
+  </div>
+
+  <!-- Tambah video kecil (landscape) -->
+  <div class="video-container">
+    <video src="video 1.mp4" controls muted></video>
+  </div>
+
+  <button onclick="playSong()">🎵 Play Song</button>
+  <button onclick="openLetter()">💌 Buka Surat Cinta</button>
+
+  <audio id="birthdaySong" src="lagu 1.mp3"></audio>
+
+  <!-- POP-UP LETTER -->
+  <div class="popup-bg" id="popupLetter">
+    <div class="popup-content">
+      <h2>Untuk Aila 💖</h2>
+      <p>Selamat hari lahir sayangku Aila 💐</p>
+      <p>Semoga hari ni penuh dengan senyuman, tawa dan kasih sayang 🥰</p>
+      <p>Terima kasih sebab sentiasa buat Aiman bahagia,  
+      you’re my favorite person in this whole world 💞</p>
+      <p>Love you always, sayang 💖</p>
+      <button onclick="closeLetter()">Tutup 💌</button>
+    </div>
+  </div>
+
+  <footer>
+    Made with <span class="heart">💖</span> by Aiman for Aila 💌
+  </footer>
+
+<script>
+  // --- Slideshow ---
+  const slides = document.querySelectorAll('.slideshow-container img');
+  let index = 0;
+  function showNextImage() {
+    slides[index].classList.remove('active');
+    index = (index + 1) % slides.length;
+    slides[index].classList.add('active');
+  }
+  setInterval(showNextImage, 2500);
+
+  // --- Lagu ---
+  function playSong() {
+    const song = document.getElementById("birthdaySong");
+    song.play();
+  }
+
+  // --- Popup Surat Cinta ---
+  function openLetter() {
+    document.getElementById("popupLetter").style.display = "flex";
+  }
+  function closeLetter() {
+    document.getElementById("popupLetter").style.display = "none";
+  }
+
+  // --- Floating Hearts Animation ---
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('floating-heart');
+    heart.innerText = '💖';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+    heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+  }
+  setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
